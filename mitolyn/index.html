@@ -1,238 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unlock Your Metabolic Power</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60 Second Ritual by Dr. Joe Vitale</title>
+    <meta name="description" content="Discover the science-backed Purple Peel formula to unlock your metabolic power.">
+    <link rel="icon" type="image/x-icon" href="https://d2543nuuc0wvdg.cloudfront.net/favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Fira+Sans:wght@700&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    :root {
-      --primary: #a00016;
-      --secondary: #6b0010;
-      --text-dark: #111;
-      --text-light: #666;
-      --bg-light: #faf7f6;
-    }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f1f4f8;
+            color: #0e0f18;
+            line-height: 1.6;
+        }
 
-    * {
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+        /* Hero Section */
+        .hero-section {
+            background-color: #ffffff;
+            padding: 48px 40px 20px;
+        }
 
-    body {
-      margin: 0;
-      background: #fff;
-      color: var(--text-dark);
-    }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+        .hero-content {
+            text-align: center;
+        }
 
-    /* HEADER */
-    .top-text {
-      text-align: center;
-      color: #f2a100;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+        .subtitle {
+            font-size: 31px;
+            font-weight: 500;
+            color: #e98b10;
+            margin-bottom: 8px;
+        }
 
-    h1 {
-      text-align: center;
-      font-size: 36px;
-      margin: 0;
-    }
+        .main-headline {
+            font-family: 'Fira Sans', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
 
-    .subline {
-      text-align: center;
-      margin-top: 12px;
-      font-size: 18px;
-      background: #f1eaea;
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 6px;
-    }
+        .tagline {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 56px;
+        }
 
-    /* MAIN GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 50px;
-      align-items: center;
-    }
+        .tagline u {
+            text-decoration: underline;
+        }
 
-    /* PRODUCT CARD */
-    .product-card {
-      background: var(--primary);
-      border-radius: 12px;
-      padding: 30px;
-      color: #fff;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      text-align: center;
-    }
+        /* Two Column Layout */
+        .two-columns {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 64px;
+        }
 
-    .product-card img {
-      width: 200px;
-      margin-bottom: 20px;
-    }
+        .column {
+            flex: 1;
+        }
 
-    .learn-list {
-      text-align: left;
-      margin-top: 20px;
-      line-height: 2;
-      font-size: 15px;
-    }
+        /* Product Card */
+        .product-card {
+            background-color: #a30615;
+            border-radius: 10px;
+            padding: 32px;
+            box-shadow: 0px 5px 45px 0px rgba(41, 41, 41, 1);
+            text-align: center;
+        }
 
-    /* FORM */
-    .form-box h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+        .product-image {
+            width: 289px;
+            max-width: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 252, 252, 0.5);
+            margin-bottom: 24px;
+        }
 
-    .form-box p {
-      color: var(--text-light);
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
+        .card-title {
+            font-family: 'Fira Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
 
-    .form-box input {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 14px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 15px;
-    }
+        .benefits-list {
+            text-align: left;
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 28px;
+        }
 
-    .btn {
-      width: 100%;
-      padding: 16px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+        .benefit-item {
+            margin-bottom: 28px;
+        }
 
-    .btn:hover {
-      background: var(--secondary);
-    }
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
 
-    /* BADGES */
-    .badges {
-      margin-top: 60px;
-      text-align: center;
-    }
+        /* Form Column */
+        .form-column {
+            padding-top: 62px;
+        }
 
-    .badges h2 {
-      margin-bottom: 30px;
-    }
+        .form-headline {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
 
-    .badge-row {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+        .form-description {
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
 
-    .badge {
-      width: 90px;
-      opacity: 0.85;
-    }
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            border: 2px solid #212121;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-    /* FOOTER */
-    footer {
-      background: #000;
-      color: #aaa;
-      padding: 30px 20px;
-      font-size: 13px;
-      text-align: center;
-      margin-top: 60px;
-    }
+        .form-input:focus {
+            outline: none;
+            border-color: #a30615;
+        }
 
-    footer p {
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.6;
-    }
+        .submit-btn {
+            width: 100%;
+            background-color: #ab0415;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 15px 90px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .submit-btn:hover {
+            background-color: #941001;
+            transform: scale(1.02);
+        }
+
+        .btn-icon {
+            margin-right: 8px;
+        }
+
+        .btn-subtext {
+            display: block;
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        /* Satisfaction Section */
+        .satisfaction-section {
+            background-color: #fefefe;
+            padding: 25px 40px 20px;
+            margin-bottom: 19px;
+        }
+
+        .satisfaction-title {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .satisfaction-image {
+            display: block;
+            max-width: 722px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background-color: #0d0d0e;
+            padding: 25px 40px;
+        }
+
+        .footer-container {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright {
+            color: #f6f6f6;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer {
+            color: #d8d3d3;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .two-columns {
+                flex-direction: column-reverse;
+            }
+
+            .main-headline {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .tagline {
+                font-size: 18px;
+                margin-bottom: 24px;
+            }
+
+            .form-column {
+                padding-top: 0;
+            }
+
+            .form-headline,
+            .form-description {
+                display: none;
+            }
+
+            .satisfaction-title {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 21px 20px 0;
+            }
+
+            .product-card {
+                padding: 30px;
+            }
+
+            .satisfaction-section {
+                padding: 0 5px;
+            }
+
+            .footer-section {
+                padding: 25px 5px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="top-text">Free Video From Mitolyn</div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <p class="subtitle"><strong>Free Video From Mitolyn</strong></p>
+                <h1 class="main-headline">Unlock Your Metabolic Power</h1>
+                <p class="tagline"><strong>"Burn more calories &amp; Feel Great With <u>MITOLYN</u>"</strong></p>
 
-    <h1>Unlock Your Metabolic Power</h1>
+                <div class="two-columns">
+                    <!-- Product Card Column -->
+                    <div class="column">
+                        <div class="product-card">
+                            <img src="https://d1yei2z3i6k35z.cloudfront.net/13479766/693abff284edf_supplement-removebg-preview.png" 
+                                 alt="Mitolyn Supplement" 
+                                 class="product-image">
+                            
+                            <h2 class="card-title">You will learn…</h2>
+                            
+                            <div class="benefits-list">
+                                <div class="benefit-item">☘️ Natural Formula</div>
+                                <div class="benefit-item">🫚 Plant Ingredients</div>
+                                <div class="benefit-item">🙂‍↕️ Easy to Swallow</div>
+                                <div class="benefit-item">🚫 Non GMO</div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div style="text-align:center;">
-      <div class="subline">
-        “Burn more calories & feel great with <b>MITOLYN</b>”
-      </div>
-    </div>
-
-    <div class="grid">
-      <!-- LEFT -->
-      <div class="product-card">
-        <img src="https://mitolyn.com/assets/images/full-product.png" alt="Mitolyn Bottle">
-
-        <div class="learn-list">
-          ✔ Natural Formula<br>
-          ✔ Plant Ingredients<br>
-          ✔ Easy to Swallow<br>
-          ✔ Non GMO
+                    <!-- Form Column -->
+                    <div class="column form-column">
+                        <h3 class="form-headline">✨ Reignite Your Inner Energy</h3>
+                        <p class="form-description">
+                            Discover the science-backed "Purple Peel" formula made to support your body's natural rhythm.<br>
+                            Clean, plant-based ingredients. Real simplicity. No fluff.
+                        </p>
+                        
+                        <form id="leadForm" onsubmit="return handleFormSubmit(event)">
+                            <input type="text" 
+                                   id="firstName"
+                                   name="first_name" 
+                                   class="form-input" 
+                                   placeholder="First name" 
+                                   required>
+                            
+                            <input type="email" 
+                                   id="userEmail"
+                                   name="email" 
+                                   class="form-input" 
+                                   placeholder="Email" 
+                                   required>
+                            
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-icon">➡️</span> Yes, Show Me The Video
+                                <small class="btn-subtext">I wanna Unlock...</small>
+                            </button>
+                        </form>
+                        <p id="statusMessage" style="margin-top: 10px; text-align: center; display: none;"></p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- RIGHT -->
-      <div class="form-box">
-        <h3>✨ Reignite Your Inner Energy</h3>
-        <p>
-          Discover the science-backed “Purple Peel” formula made to support your body’s natural rhythm.
-          Clean, plant-based ingredients. Real simplicity. No fluff.
-        </p>
+    <!-- Satisfaction Section -->
+    <section class="satisfaction-section">
+        <div class="container">
+            <h2 class="satisfaction-title"><strong>100% percentage satisfication:</strong></h2>
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/13479766/693ac08c880f6_Screenshot2025-12-11183002.png" 
+                 alt="100% Satisfaction Guarantee" 
+                 class="satisfaction-image">
+        </div>
+    </section>
 
-        <form>
-          <input type="text" placeholder="First name" required>
-          <input type="email" placeholder="Email" required>
-          <button class="btn">Yes, Show Me The Video</button>
-        </form>
-      </div>
-    </div>
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <p class="copyright">Copyright (C) GlowPulse</p>
+            <p class="disclaimer">
+                © 2025 Clearing Academy. All Rights Reserved. This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. The information provided here is for educational purposes only and should not be taken as medical, financial, or psychological advice. Results may vary from person to person.
+            </p>
+        </div>
+    </footer>
 
-    <!-- BADGES -->
-    <div class="badges">
-      <h2>100% Percentage Satisfaction</h2>
-      <div class="badge-row">
-        <img class="badge" src="https://via.placeholder.com/90?text=GMP">
-        <img class="badge" src="https://via.placeholder.com/90?text=FDA">
-        <img class="badge" src="https://via.placeholder.com/90?text=Natural">
-        <img class="badge" src="https://via.placeholder.com/90?text=USA">
-        <img class="badge" src="https://via.placeholder.com/90?text=Non+GMO">
-      </div>
-    </div>
-  </div>
+<script>
+        // EmailJS Configuration
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: '_4ZtP9VMs3Mcsxb-m',
+            SERVICE_ID: 'service_s2tbor7',
+            TEMPLATE_ID: 'template_j6y50a9'
+        };
 
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2025 GlowPulse. All Rights Reserved.  
-      This site is not a part of Facebook or Meta Platforms, Inc.  
-      Results may vary from person to person.  
-      This content is for educational purposes only.
-    </p>
-  </footer>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+        })();
+
+        // Handle form submission
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const statusMessage = document.getElementById('statusMessage');
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '⏳ Processing...';
+            statusMessage.style.display = 'block';
+            statusMessage.style.color = '#666';
+            statusMessage.textContent = 'Saving your details and sending confirmation...';
+            
+            try {
+                // 1. Save lead to CSV file on server
+                await saveLead(firstName, email);
+                
+                // 2. Send email via EmailJS
+                await sendEmail(firstName, email);
+                
+                // 3. Show success message briefly
+                statusMessage.style.color = '#28a745';
+                statusMessage.textContent = '✅ Success! Redirecting to your video...';
+                
+                // 4. Redirect after short delay
+                setTimeout(() => {
+                    window.location.href = 'https://06f2355sb1buas59qq0f3i3m7f.hop.clickbank.net';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                statusMessage.style.color = '#dc3545';
+                statusMessage.textContent = '⚠️ Something went wrong. Redirecting anyway...';
+                
+                // Still redirect even if email fails
+                setTimeout(() => {
+                    window.location.href = 'https://06f2355sb1buas59qq0f3i3m7f.hop.clickbank.net';
+                }, 2000);
+            }
+            
+            return false;
+        }
+
+        // Google Sheets Script URL - REPLACE WITH YOUR URL FROM GOOGLE APPS SCRIPT
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1sRXmjwH0dQxENOW2_qU-GwihH6OmVZ0JXss6LB0YxCQBLr1NZCxUIKscOY5fUepH/exec';
+
+        // Save lead to Google Sheets
+        async function saveLead(firstName, email) {
+            const lead = {
+                firstName: firstName,
+                email: email,
+                source: 'mitolyn-landing-page'
+            };
+            
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Required for Google Apps Script
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(lead)
+                });
+                
+                console.log('Lead saved to Google Sheets');
+                return { success: true };
+                
+            } catch (error) {
+                console.error('Error saving lead:', error);
+                // Fallback: save to localStorage if Google Sheets fails
+                let leads = JSON.parse(localStorage.getItem('mitolyn_leads_backup') || '[]');
+                leads.push({...lead, timestamp: new Date().toISOString()});
+                localStorage.setItem('mitolyn_leads_backup', JSON.stringify(leads));
+                console.log('Lead saved to localStorage as backup');
+                throw error;
+            }
+        }
+
+        // Send email via EmailJS
+        async function sendEmail(firstName, email) {
+            const templateParams = {
+                to_name: firstName,
+                to_email: email,
+                from_name: 'Mitolyn',
+                first_name: firstName,
+                user_email: email,
+                message: `Thank you ${firstName} for your interest in Mitolyn! Your exclusive video access is ready.`
+            };
+            
+            const response = await emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_ID,
+                templateParams
+            );
+            
+            console.log('Email sent successfully:', response);
+            return response;
+        }
+
+        // Console helper
+        console.log('🚀 Mitolyn Lead Capture Active');
+        console.log('📊 Leads are saved to Google Sheets');
+        console.log('📥 Backup leads in localStorage: JSON.parse(localStorage.getItem("mitolyn_leads_backup"))');
+    </script>
 
 </body>
 </html>
